@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Words</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+    <script src="https://unpkg.com/fast-levenshtein"></script>
+</head>
+<body>
+
+    <div id="app">
+        <input id="text" autocomplete="off" type="text" v-model="input">
+        <ol>
+            <li v-for="word in words">
+                {{ word }}
+            </li>
+        </ol>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
