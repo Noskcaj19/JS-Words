@@ -28,9 +28,10 @@ var app = new Vue({
             if (this.input === "") {
                 this.words = []
             } else {
+                var input = this.input.toLowerCase();
                 this.words = _.sortBy(
-                        allWords.filter(word => word.startsWith(this.input.slice(0, 1)))
-                        .map(word => [word, Levenshtein.get(this.input, word)]),
+                        allWords.filter(word => word.startsWith(input.slice(0, 1)))
+                        .map(word => [word, Levenshtein.get(input, word)]),
                     x => x[1])
                     .slice(0, 50)
                     .map(x => x[0]);
